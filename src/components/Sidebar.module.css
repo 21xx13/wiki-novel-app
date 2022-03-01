@@ -1,0 +1,28 @@
+.deal {
+    padding: 0;
+}
+
+.deal h3 {
+    color: #495057;
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.deal a {
+    font-size: 14px;
+    color: #6d6c6c;
+}
+
+.deals img {
+    border: 1px solid #ddd;
+}
+
+.headers {
+    color: #1e272e;
+    margin-bottom: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Main from './components/MainComponent';
 import Footer from './components/FooterComponent';
@@ -14,6 +12,7 @@ function App() {
       <Header/>
       <MainBanner />
       <Main/>
+     
       <Footer/>
     </div>
     </BrowserRouter>
