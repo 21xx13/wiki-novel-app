@@ -1,17 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/HeaderComponent';
 import Main from './components/MainComponent';
 import Footer from './components/FooterComponent';
+import { BrowserRouter } from 'react-router-dom';
+import { Header } from './components/HeaderComponent';
+import { MainBanner } from './components/MainBanner';
 
 function App() {
   return (
+    <BrowserRouter>
     <div>
       <Header/>
+      <MainBanner />
       <Main/>
       <Footer/>
     </div>
+    </BrowserRouter>
   );
 }
 

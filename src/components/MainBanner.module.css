@@ -1,0 +1,37 @@
+.banner {
+    background: url(../images/banner.png)no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 40em;
+}
+
+.info {
+    padding: 12em 0 0em 3em;
+    width: 32%;
+}
+
+.info h3 {
+    font-size: 3.5em;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info p {
+    color: #fff;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.padding {
+    padding: 40px !important;
+}
