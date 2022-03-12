@@ -16,6 +16,7 @@ body a {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
+    color: #555;
 }
 
 a:hover {
@@ -43,7 +44,7 @@ p {
 
 ul {
     margin: 0;
-    padding: 0;
+    padding: 0 !important;
 }
 
 body img {
@@ -52,4 +53,29 @@ body img {
     -o-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
+}
+
+body a:hover {
+    color: #6ffa82;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="email"],
+input[type="search"] {
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer {
+    background: #f7f7f7;
+}
+
+footer p {
+    font-size: 0.9em;
 }

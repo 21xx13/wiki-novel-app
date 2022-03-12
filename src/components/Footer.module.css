@@ -1,0 +1,96 @@
+.title {
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #3d3f44;
+}
+
+.newsletter {
+    display: flex;
+    margin-bottom: 2.5em;
+}
+
+.newsletter input[type="email"] {
+    padding: 0.6em 1em;
+    font-size: 15px;
+    color: #000;
+    outline: none;
+    letter-spacing: 2px;
+    border: none;
+    border: none;
+    flex-basis: 100%;
+    background: #efeeee;
+}
+
+.cpyright p {
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+    color: #555;
+}
+
+.socal_icon {
+    background: #1e272e;
+}
+
+.socal_icon span {
+    color: #6ffa82 !important;
+}
+
+.footer_right {
+    border-left: 1px solid #ddd;
+    padding: 3em 0em 3em 2em !important;
+}
+
+.footer_padding {
+    padding: 3em 0;
+}
+
+.footer_padding li a {
+    color: #727377;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    display: block;
+    margin: 1em 0;
+}
+
+.footer_padding li a:hover {
+    opacity: 0.8;
+}
+
+.w3layouts li {
+    display: inline-block;
+}
+
+.w3layouts li a {
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 50%;
+    margin: 0 0.5em;
+}
+
+.w3layouts li a span {
+    color: #fff;
+    line-height: 34px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 34px;
+    color: #1c1d21;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+    letter-spacing: 1px;
+}
+
+.contact_info h4,
+.sub_con {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    color: #5e5e61;
+    font-weight: 600;
+    text-transform: uppercase;
+}
