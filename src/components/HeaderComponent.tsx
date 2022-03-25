@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
                           <Collapse isOpen={navOpen} navbar>
                               <Nav navbar>
                               <NavItem>
-                                  <NavLink className="nav-link"  to='/'>Главная</NavLink>
+                                  <NavLink className="nav-link"  to='/home'>Главная</NavLink>
                               </NavItem>
                               <NavItem>
                                   <NavLink className="nav-link" to='/catalog'>Каталог</NavLink>

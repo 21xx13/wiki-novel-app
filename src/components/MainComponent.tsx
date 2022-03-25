@@ -1,10 +1,13 @@
 import React from 'react';
-import { NOVELS } from '../shared/novels';
 import { Sidebar } from './SidebarComponent';
 import classes from './Main.module.css';
+import { Novel } from '../models/Novel'
+import { Link } from 'react-router-dom';
 
-function Main() {
-  const novel_list = NOVELS.map((novel) => {
+export const Main: React.FC<{
+  novels: Novel[] | undefined
+}> = ({ novels }) => {
+  const novel_list = novels?.map((novel) => {
     return (
       <div className={`col-md-3 ${classes.product}`}>
       <div className={`text-center mt-lg-4 ${classes.product_info}`}>
@@ -13,7 +16,7 @@ function Main() {
           </div>
           <div className={classes.item}>
               <h4>
-                  <a href="#" className="editContent" >{ novel.name }</a>
+              <Link to={`/catalog/${novel.id}`} >{ novel.name }</Link>
               </h4>
           </div>
       </div>
@@ -31,5 +34,3 @@ function Main() {
     </div>
   );
 }
-
-export default Main;

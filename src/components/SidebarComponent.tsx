@@ -33,7 +33,7 @@ export const Sidebar: React.FC = () => {
         <h3 className={classes.headers}>Популярные новеллы</h3>
         <div className="special-sec1 row mt-3 ">
             <div className={`col-md-4 ${classes.deals}`}>
-                <img src="assets/images/s4.jpg" className="img-fluid" alt="" />
+                <img src="/assets/images/s4.jpg" className="img-fluid" alt="" />
             </div>
             <div className={`col-md-6 ${classes.deal}`}>
                 <h3>Tiny Bunny</h3>
@@ -42,7 +42,7 @@ export const Sidebar: React.FC = () => {
         </div>
         <div className="special-sec1 row mt-3 " >
             <div className={`col-md-4 ${classes.deals}`}>
-                <img src="assets/images/s2.jpg" className="img-fluid" alt="" />
+                <img src="/assets/images/s2.jpg" className="img-fluid" alt="" />
             </div>
             <div className={`col-md-6 ${classes.deal}`}>
                 <h3 >DOKI DOKI LITERATURE CLUB</h3>
@@ -51,7 +51,7 @@ export const Sidebar: React.FC = () => {
         </div>
         <div className="special-sec1 row mt-3" >
             <div className={`col-md-4 ${classes.deals}`}>
-                <img src="assets/images/s1.jpg" className="img-fluid" alt="" />
+                <img src="/assets/images/s1.jpg" className="img-fluid" alt="" />
             </div>
             <div className={`col-md-6 ${classes.deal}`}>
                 <h3>ЗАРЯ-1</h3>
@@ -60,7 +60,7 @@ export const Sidebar: React.FC = () => {
         </div>
         <div className="special-sec1 row mt-3" >
             <div className={`col-md-4 ${classes.deals}`}>
-                <img src="assets/images/s5.jpg" className="img-fluid" alt="" />
+                <img src="/assets/images/s5.jpg" className="img-fluid" alt="" />
             </div>
             <div className={`col-md-6 ${classes.deal}`}>
                 <h3>CATEAU</h3>
