@@ -3,12 +3,14 @@ import {Main} from './MainComponent';
 import Footer from './FooterComponent';
 import { RouteComponentProps } from 'react-router-dom';
 import { Header } from './HeaderComponent';
+
 import { MainBanner } from './MainBanner';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { NovelDetail } from './novels/NovelDetail';
 import { useCommentsQuery } from './novels/commentsHookApi';
 import { useNovelsQuery } from './novels/novelsHookApi';
+import HomePage from './HomePage';
 
 export const MainSwitcher: React.FC = () => {
   const { data: novelJson, isLoading} = useNovelsQuery();
@@ -24,6 +26,7 @@ export const MainSwitcher: React.FC = () => {
       <Header/>
       <MainBanner />
       <Switch>
+              <Route path="/home" component={() => <HomePage />}/>
               <Route exact path='/catalog' component={() => <Main novels={novelJson} />} />
               <Route path='/catalog/:novelId' component={NovelWithId} />
               <Redirect to="/home" />

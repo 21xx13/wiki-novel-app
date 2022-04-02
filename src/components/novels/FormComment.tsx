@@ -9,7 +9,7 @@ export const FormComment: React.FC<{
     form: UseFormReturn<NovelComment, any>;
     novelId: number
 }>  = React.memo(({
-    form: { register, control, handleSubmit },
+    form: { control, handleSubmit },
     novelId
 }) => {
 //     const [formdata, setformdata] = useState({
