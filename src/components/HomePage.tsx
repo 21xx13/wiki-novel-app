@@ -2,11 +2,9 @@ import React from 'react';
 import { Carousel, CarouselCaption, CarouselControl, CarouselIndicators, CarouselItem } from 'reactstrap';
 
 function HomePage() {
-    // State for Active index
     const [activeIndex, setActiveIndex] = React.useState(0);
   const [animating, setAnimating] = React.useState(false);
   
-    // Sample items for Carousel
     const items = [
         {
             id: 1,
@@ -27,7 +25,6 @@ function HomePage() {
         }
     ];
   
-    // Items array length
     const next = () => {
         if (animating) return;
         const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;

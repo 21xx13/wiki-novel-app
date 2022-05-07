@@ -1,5 +1,5 @@
 import './App.css';
-import {Main} from './components/MainComponent';
+import {Catalog} from './components/CatalogComponent';
 import Footer from './components/FooterComponent';
 import { BrowserRouter, RouteComponentProps } from 'react-router-dom';
 import { Header } from './components/HeaderComponent';
@@ -13,7 +13,7 @@ import { MainSwitcher } from './components/MainSwitcher';
 import axios from 'axios';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-axios.defaults.baseURL = 'http://localhost:3000'
+axios.defaults.baseURL = 'http://127.0.0.1:8000'
 
 
 const queryClient = new QueryClient({

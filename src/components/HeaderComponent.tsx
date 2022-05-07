@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
                                   <NavLink className="nav-link" to='/catalog'>Каталог</NavLink>
                               </NavItem>
                               <NavItem>
-                                  <NavLink className="nav-link"  to='/articles'>Статьи</NavLink>
+                                  <NavLink className="nav-link"  to='/course'>Гайд по RenPy</NavLink>
                               </NavItem>
                               <NavItem>
                                   <a className="nav-link login" onClick={toggle}>Вход</a>

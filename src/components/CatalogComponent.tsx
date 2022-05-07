@@ -4,7 +4,7 @@ import classes from './Main.module.css';
 import { Novel } from '../models/Novel'
 import { Link } from 'react-router-dom';
 
-export const Main: React.FC<{
+export const Catalog: React.FC<{
   novels: Novel[] | undefined
 }> = ({ novels }) => {
   const novel_list = novels?.map((novel) => {
@@ -12,11 +12,11 @@ export const Main: React.FC<{
       <div className={`col-md-3 ${classes.product}`}>
       <div className={`text-center mt-lg-4 ${classes.product_info}`}>
           <div>
-              <img src={ novel.image } className="img-fluid" alt=""  />
+              <img src={ novel.poster } className="img-fluid" alt=""  />
           </div>
           <div className={classes.item}>
               <h4>
-              <Link to={`/catalog/${novel.id}`} >{ novel.name }</Link>
+              <Link to={`/catalog/${novel.id}`} >{ novel.title }</Link>
               </h4>
           </div>
       </div>
