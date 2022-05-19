@@ -4,9 +4,9 @@ body {
     font-size: 100%;
     background: #fff;
     font-family: 'Lato', sans-serif;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth;
     overflow-x: hidden;
-    margin-right: calc(-1 * (100vw - 100%));
+    margin-right: calc(-1 * (100vw - 100%)); */
 }
 
 body a {

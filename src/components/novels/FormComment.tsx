@@ -19,12 +19,12 @@ export const FormComment: React.FC<{
 //   });
   //const onChangeHandler= (field: string, value:string)=>(e:any)=>setformdata({...formdata,[field]:value})
     const {field: commentText, fieldState: commentState} = useController({
-        name: 'comment',
+        name: 'text',
         control,
         rules: { required: 'Обязательное поле!' }
     });
     const {field: author, fieldState: authorState} = useController({
-        name: 'author',
+        name: 'name',
         control,
         rules: { required: 'Обязательное поле!' }
     });
@@ -38,8 +38,7 @@ export const FormComment: React.FC<{
     const onSubmit: SubmitHandler<NovelComment> = async (comment) => {
         await saveMutation.mutateAsync({
             ...comment,
-            novelId: novelId,
-            date: new Date().toISOString()
+            novel: novelId
         })
     }
 

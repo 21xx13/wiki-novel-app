@@ -1,8 +1,9 @@
+import { Novel } from "./Novel"
+
 export type NovelComment = {
     id: number,
-    novelId: number,
+    novel: number,
     email: string,
-    comment: string,
-    author: string,
-    date: string 
+    text: string,
+    name: string
 }

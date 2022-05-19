@@ -1,10 +1,9 @@
 import './App.css';
 import {Catalog} from './components/CatalogComponent';
 import Footer from './components/FooterComponent';
-import { BrowserRouter, RouteComponentProps } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 import { Header } from './components/HeaderComponent';
 import { MainBanner } from './components/MainBanner';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import { NOVELS } from './shared/novels';
 import { COMMENTS } from './shared/comments'
 import { NovelDetail } from './components/novels/NovelDetail';
