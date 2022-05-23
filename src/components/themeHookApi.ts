@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios"
-import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useQuery } from "react-query"
 import { Theme } from "../models/Theme"
 
 export const useThemesQuery = () => {

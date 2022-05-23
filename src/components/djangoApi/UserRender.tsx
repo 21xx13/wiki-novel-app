@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { DropdownItem, DropdownMenu, DropdownToggle, NavItem, UncontrolledDropdown } from "reactstrap";
 
@@ -14,31 +15,31 @@ export const UserRender: React.FC<{
     userSetter(null);
     navigate('/login');
   };
-  const setItem = (username: string) => {
-    if (username)
-    return (
-      <div>
-        <UncontrolledDropdown>
-                <DropdownToggle nav className="avatar-wrap" >
-                  <a className="avatar">{username.toUpperCase()[0]}</a>
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Привет, {username}
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    <a onClick={logout}>Выход</a>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-        </div>
-    );
-    else return (
+  const setItem = (userName: string) => {
+    if (userName){
+      return (
+        <div>
+          <UncontrolledDropdown>
+                  <DropdownToggle nav className="avatar-wrap" >
+                    <span className="avatar">{userName.toUpperCase()[0]}</span>
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem>
+                      Привет, {userName}
+                    </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>
+                      <span onClick={logout}>Выход</span>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+          </div>
+      );
+    } else return (
       <NavItem>
-        <a className="nav-link login" href="/login">
+        <Link className="nav-link login" to="/login">
           Вход
-        </a>
+        </Link>
       </NavItem>
     );
   };

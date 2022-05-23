@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Theme } from "../../models/Theme";
 import { Breadcrumb } from "../Breadcrumb";
 import { MenuCourse } from "./MenuCourse";
@@ -7,6 +8,7 @@ export const ThemeDetail: React.FC<{
   theme: Theme;
   themes: Theme[];
 }> = ({ theme, themes }) => {
+  let navigate = useNavigate();
   if (theme != null) {
     const slides = theme.courseslide_set.map((slide) => {
       return (
@@ -37,7 +39,11 @@ export const ThemeDetail: React.FC<{
             </div>
           </div>
           <div className="col-lg-1 col-btn">
-            <div className="btn next-btn next-slide">
+            <div className="btn next-btn next-slide" onClick={()=> {
+              if (theme.id !== themes.length - 1){
+                navigate(`/course/${theme.id + 1}`);
+              }
+            }}>
               <div className="btn-wrap">
                 <i className="fa fa-chevron-right " aria-hidden="true"></i>
               </div>

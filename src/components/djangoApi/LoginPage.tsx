@@ -4,7 +4,7 @@ import { SubmitHandler, useController, UseFormReturn } from "react-hook-form";
 import { User } from "../../models/User";
 import { useLoginUserMutation } from "./authHookApi";
 import CSRFToken from "./csrfToken";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const LoginPage: React.FC<{
   form: UseFormReturn<User, any>;
@@ -45,11 +45,11 @@ export const LoginPage: React.FC<{
 
     let link = isLogin ? (
       <p>
-        Ещё нет аккаунта? <a href="/registration">Зарегистрироваться</a>
+        Ещё нет аккаунта? <Link to="/registration">Зарегистрироваться</Link>
       </p>
     ) : (
       <p>
-        Уже есть аккаунт? <a href="/login">Войти</a>
+        Уже есть аккаунт? <Link to="/login">Войти</Link>
       </p>
     );
     let remember = isLogin ? (

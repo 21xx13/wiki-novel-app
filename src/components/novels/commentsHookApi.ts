@@ -28,20 +28,3 @@ export const useSaveCommentMutation = () => {
         }
     })
 }
-
-// export const useDeleteTodoMutation = () => {
-//     const queryClient = useQueryClient()
-
-//     return useMutation<Todo, AxiosError, number>(async (id) => {
-//         const res = await axios.delete(`/todos/${id}`)
-//         return res.data
-//     }, {
-//         onSuccess(data, id) {
-//             queryClient.setQueryData<Todo[]>('todos', todos => {
-//                 const index = todos.findIndex(t => t.id == id)
-//                 todos.splice(index, 1)
-//                 return [...todos]
-//             })
-//         }
-//     })
-// }

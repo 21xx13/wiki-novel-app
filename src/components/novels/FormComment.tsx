@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Form, Input, Label } from 'reactstrap';
 import { SubmitHandler, useController, UseFormReturn } from 'react-hook-form';
 import { NovelComment } from '../../models/Comment';
@@ -12,12 +12,6 @@ export const FormComment: React.FC<{
     form: { control, handleSubmit },
     novelId
 }) => {
-//     const [formdata, setformdata] = useState({
-//         comment:"",
-//         email:"",
-//         author:"",
-//   });
-  //const onChangeHandler= (field: string, value:string)=>(e:any)=>setformdata({...formdata,[field]:value})
     const {field: commentText, fieldState: commentState} = useController({
         name: 'text',
         control,
@@ -41,10 +35,7 @@ export const FormComment: React.FC<{
             novel: novelId
         })
     }
-
-
-
-    //const onSubmit = (data: any) => {console.log(data);}
+    
     return (<Form className="mt-4" id="formReview" onSubmit={handleSubmit(onSubmit)} >
                 <Input type="hidden" name="parent" id="contactparent" value=""/>
                 <div className="form-group editContent" >

@@ -1,12 +1,12 @@
-import { Catalog } from "./CatalogComponent";
-import Footer from "./FooterComponent";
+import { Catalog } from "./novels/CatalogComponent";
+import { Footer } from "./FooterComponent";
 import { Navigate, Routes, Route, useParams } from "react-router-dom";
 import { Header } from "./HeaderComponent";
 import { MainBanner } from "./MainBanner";
 import { NovelDetail } from "./novels/NovelDetail";
 import { useCommentsQuery } from "./novels/commentsHookApi";
 import { useNovelsQuery } from "./novels/novelsHookApi";
-import HomePage from "./HomePage";
+import { HomePage } from "./HomePage";
 import { useThemesQuery } from "./themeHookApi";
 import { Course } from "./course/CourseComponent";
 import { LoginPage } from "./djangoApi/LoginPage";
@@ -24,6 +24,7 @@ export const MainSwitcher: React.FC = () => {
   useEffect(() => {
     form.reset();
   }, []);
+  const topNovels = novelJson?.slice(0, 3);
 
   const NovelWithId = () => {
     const params = useParams();
@@ -39,6 +40,8 @@ export const MainSwitcher: React.FC = () => {
             (comment) => comment.novel === parseInt(params.novelId, 10)
           ) || []
         }
+
+        topNovels={topNovels}
       />
     );
   };
@@ -53,8 +56,8 @@ export const MainSwitcher: React.FC = () => {
       <MainBanner />
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="catalog" element={<Catalog novels={novelJson} />} />
-        <Route path="course" element={<Course themes={themesJson} />} />
+        <Route path="catalog" element={<Catalog novels={novelJson} topNovels={topNovels} />} />
+        <Route path="course" element={<Course themes={themesJson} topNovels={topNovels} />} />
         <Route path="/course/:themeId" element={<ThemeWithId />} />
         <Route path="/catalog/:novelId" element={<NovelWithId />} />
         <Route path="/login" element={<LoginPage form={form} userSetter={setUsername} isLogin={true} />} />

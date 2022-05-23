@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios"
-import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useQuery } from "react-query"
 import { Novel } from "../../models/Novel"
 
 export const useNovelsQuery = () => {

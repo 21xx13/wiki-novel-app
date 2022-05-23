@@ -8,27 +8,28 @@ import {
   CarouselItem,
 } from "reactstrap";
 
-function HomePage() {
+export const HomePage: React.FC = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [animating, setAnimating] = React.useState(false);
+  const navigate = useNavigate();
 
   const items = [
     {
       id: 1,
       caption: "Cateau",
-      src: "assets/images/1.jpg",
+      src: "/static/images/1.jpg",
       altText: "Slide One",
     },
     {
       id: 2,
       caption: "Doki Doki Literature Club!",
-      src: "assets/images/2.jpg",
+      src: "/static/images/2.jpg",
       altText: "Slide Two",
     },
     {
       id: 3,
       caption: "Zarya-1",
-      src: "assets/images/3.jpg",
+      src: "/static/images/3.jpg",
       altText: "Slide Two",
     },
   ];
@@ -88,7 +89,7 @@ function HomePage() {
           <div className="col-lg-4">
             <br />
             <img
-              src="https://mmo13.ru/download/content/201811/20/02/image_5bf340f25977f9.01407880.jpg"
+              src="static/images/poster.jpg"
               className="img-fluid"
             />
           </div>
@@ -112,7 +113,7 @@ function HomePage() {
           <div className="col-md-4">
             <div className="card">
               <img
-                src="assets/images/card-1.png"
+                src="static/images/card-1.png"
                 className="card-img-top"
                 alt=""
               />
@@ -123,7 +124,7 @@ function HomePage() {
                   популярных и наиболее подходящих для новелл.
                 </p>
                 <div className="w3layouts-newsletter text-center">
-                  <a href="#" className="btn1 btn">
+                  <a className="btn1 btn">
                     Читать
                   </a>
                 </div>
@@ -133,7 +134,7 @@ function HomePage() {
           <div className="col-md-4">
             <div className="card my-card">
               <img
-                src="assets/images/card-2.png"
+                src="static/images/card-2.png"
                 className="card-img-top"
                 alt=""
               />
@@ -144,7 +145,7 @@ function HomePage() {
                   жанре есть своя классификация.
                 </p>
                 <div className="w3layouts-newsletter text-center">
-                  <a href="#" className="btn1 btn">
+                  <a className="btn1 btn">
                     Читать
                   </a>
                 </div>
@@ -153,7 +154,7 @@ function HomePage() {
           </div>
           <div className="col-md-4">
             <div className="card my-card">
-              <img src="assets/images/card-3.png" alt="" />
+              <img src="static/images/card-3.png" alt="" />
               <div className="card-body">
                 <h4 className="card-title">Жанры новелл</h4>
                 <p className="card-text">
@@ -161,7 +162,7 @@ function HomePage() {
                   в тех или иных жанрах новелл.
                 </p>
                 <div className="w3layouts-newsletter text-center">
-                  <a href="#" className="btn1 btn">
+                  <a className="btn1 btn">
                     Читать
                   </a>
                 </div>
@@ -205,12 +206,6 @@ function HomePage() {
           />
         </Carousel>
       </div>
-      <script>
-        let buttons = document.querySelector('carousel-indicators').children;
-        console.log(buttons);
-      </script>
     </>
   );
 }
-
-export default HomePage;

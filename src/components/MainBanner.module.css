@@ -1,5 +1,5 @@
 .banner {
-    background: url(../images/banner.png)no-repeat center;
+    background: url(../../public/static/images/banner.png)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

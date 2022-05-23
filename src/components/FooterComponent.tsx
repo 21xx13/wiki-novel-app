@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Footer.module.css';
 
-function Footer() {
+export const  Footer: React.FC = () => {
   return (
     <div >
       <footer>
@@ -19,22 +20,22 @@ function Footer() {
                         <h4 className={`${classes.sub_con}  my-4`} >Мы в социальных сетях</h4>
                         <ul className={`${classes.w3layouts} list-unstyled`}>
                             <li>
-                                <a href="#" className={classes.socal_icon} >
+                                <a className={classes.socal_icon} >
                                     <span className="fa fa-facebook-f" ></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className={classes.socal_icon} >
+                                <a className={classes.socal_icon} >
                                     <span className="fa fa-twitter" ></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className={classes.socal_icon} >
+                                <a className={classes.socal_icon} >
                                     <span className="fa fa-dribbble" ></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" className={classes.socal_icon} >
+                                <a className={classes.socal_icon} >
                                     <span className="fa fa-google-plus" ></span>
                                 </a>
                             </li>
@@ -56,13 +57,13 @@ function Footer() {
                                 <h3 className={`${classes.title} text-uppercase mb-lg-4 mb-3`}>Разделы</h3>
                                 <ul className="list-unstyled w3layouts-icons">
                                     <li>
-                                        <a href="index.html" className="text-uppercase " >Главная</a>
+                                        <Link to="/" className="text-uppercase " >Главная</Link>
                                     </li>
                                     <li>
-                                        <a href="about.html" className="text-uppercase" >Категории</a>
+                                        <Link to="/catalog" className="text-uppercase" >Каталог</Link>
                                     </li>
                                     <li>
-                                        <a href="contact.html" className="text-uppercase" >Контакты</a>
+                                        <Link to="/course" className="text-uppercase" >Гайд по разработке</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -70,21 +71,17 @@ function Footer() {
                                 <div className="agileinfo_social_icons">
                                     <h3 className={`${classes.title} text-uppercase mb-lg-4 mb-3`}>Статьи</h3>
                                     <ul className="list-unstyled w3layouts-icons">
-
                                         <li>
-                                            <a href="#" className="text-uppercase" >Гайд по разработке</a>
+                                            <a className="text-uppercase" >Игровые механики</a>
                                         </li>
                                         <li>
-                                            <a href="#" className="text-uppercase" >Игровые механики</a>
+                                            <a className="text-uppercase" >Жанры новелл</a>
                                         </li>
                                         <li>
-                                            <a href="#" className="text-uppercase" >Жанры новелл</a>
+                                            <a className="text-uppercase" >Материалы для разработки</a>
                                         </li>
                                         <li>
-                                            <a href="#" className="text-uppercase" >Материалы для разработки</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="text-uppercase" >Типы новелл</a>
+                                            <a className="text-uppercase" >Типы новелл</a>
                                         </li>
                                     </ul>
                                 </div>                   
@@ -119,5 +116,3 @@ function Footer() {
     </div>
   );
 }
-
-export default Footer;
