@@ -1,0 +1,16 @@
+.fixed {
+    height: 400px;
+    border-top: 4px solid #f0f0f0;
+    border-bottom: 4px solid #f0f0f0;
+    background: url("../../public/static/images/bg.jpg") no-repeat center 40% fixed;
+    background-blend-mode: multiply;
+    background-color: #bfbfbf;
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.articles {
+    align-items: stretch;
+}

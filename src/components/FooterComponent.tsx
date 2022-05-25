@@ -48,7 +48,9 @@ export const  Footer: React.FC = () => {
                             <p>Подписываясь на нашу рассылку, вы всегда будете получать самые свежие новости и обновления.</p>
                             <form action="#" method="post" className={classes.newsletter}>
                                 <input type="email" name="Email" placeholder="Введите ваш email..."  />
-                                <button className="btn1" ><span className="fa fa-paper-plane-o" aria-hidden="true" ></span></button>
+                                <div className="w3layouts-newsletter text-center">
+                                    <button className="btn1" ><span className="fa fa-paper-plane-o" aria-hidden="true" ></span></button>
+                                    </div>
 
                             </form>
                         </div>

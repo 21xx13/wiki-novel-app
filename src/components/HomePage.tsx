@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import classes from './Home.module.css';
 import {
   Carousel,
   CarouselCaption,
@@ -11,7 +12,6 @@ import {
 export const HomePage: React.FC = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [animating, setAnimating] = React.useState(false);
-  const navigate = useNavigate();
 
   const items = [
     {
@@ -22,7 +22,7 @@ export const HomePage: React.FC = () => {
     },
     {
       id: 2,
-      caption: "Doki Doki Literature Club!",
+      caption: "Cinders",
       src: "/static/images/2.jpg",
       altText: "Slide Two",
     },
@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
       id: 3,
       caption: "Zarya-1",
       src: "/static/images/3.jpg",
-      altText: "Slide Two",
+      altText: "Slide Three",
     },
   ];
 
@@ -97,7 +97,7 @@ export const HomePage: React.FC = () => {
       </div>
       <figure>
         <div className="fixed-wrap">
-          <div id="fixed-main-page"></div>
+          <div className={classes.fixed}></div>
         </div>
       </figure>
       <div className="conteiner-fluid padding main-page-block">
@@ -108,8 +108,8 @@ export const HomePage: React.FC = () => {
         </div>
         <hr style={{ margin: "0 auto" }} />
       </div>
-      <div className="container padding">
-        <div className="row padding articles-row">
+      <div className="container">
+        <div className={`row padding ${classes.articles}`}>
           <div className="col-md-4">
             <div className="card">
               <img
@@ -117,7 +117,7 @@ export const HomePage: React.FC = () => {
                 className="card-img-top"
                 alt=""
               />
-              <div className="card-body my-card">
+              <div className="card-body">
                 <h4 className="card-title">Игровые механики</h4>
                 <p className="card-text">
                   Узнайте о том, какие бывают игровые механики. Подборка самых
@@ -132,7 +132,7 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card my-card">
+            <div className="card">
               <img
                 src="static/images/card-2.png"
                 className="card-img-top"
@@ -153,7 +153,7 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card my-card">
+            <div className="card">
               <img src="static/images/card-3.png" alt="" />
               <div className="card-body">
                 <h4 className="card-title">Жанры новелл</h4>

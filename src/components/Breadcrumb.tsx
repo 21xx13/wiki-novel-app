@@ -5,13 +5,13 @@ export const Breadcrumb: React.FC<{
   point: string;
 }> = ({ point }) => {
   return (
-    <ol className="breadcrumb editContent" id="start">
+    <ol className="breadcrumb">
       <li className="breadcrumb-item">
-        <Link to="/" className="editContent">
+        <Link to="/">
           Главная
         </Link>
       </li>
-      <li className="breadcrumb-item active editContent">{point}</li>
+      <li className="breadcrumb-item active">{point}</li>
     </ol>
   );
 };

@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import { ThemeDetail } from "./course/ThemeDetail";
 
 export const MainSwitcher: React.FC = () => {
-  const { data: novelJson } = useNovelsQuery();
+  let { data: novelJson } = useNovelsQuery();
   const { data: themesJson } = useThemesQuery();
   const { data: commentsJson } = useCommentsQuery();
   const [username, setUsername] = useState(null);
@@ -24,6 +24,7 @@ export const MainSwitcher: React.FC = () => {
   useEffect(() => {
     form.reset();
   }, []);
+  novelJson = novelJson?.reverse();
   const topNovels = novelJson?.slice(0, 3);
 
   const NovelWithId = () => {
@@ -42,6 +43,7 @@ export const MainSwitcher: React.FC = () => {
         }
 
         topNovels={topNovels}
+        username={username}
       />
     );
   };

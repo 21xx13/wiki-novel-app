@@ -6,16 +6,22 @@ import { Sidebar } from "../SidebarComponent";
 import { FormComment } from "./FormComment";
 import { useForm } from "react-hook-form";
 import { Breadcrumb } from "../Breadcrumb";
+import { Link } from "react-router-dom";
 
 export const NovelDetail: React.FC<{
-  novel: Novel | undefined;
+  novel: Novel;
   comments: NovelComment[];
   topNovels: Novel[];
-}> = ({ novel, comments, topNovels }) => {
+  username: string;
+}> = ({ novel, comments, topNovels, username }) => {
   const comments_list = comments.map((comment) => {
     return (
-      <div className="media py-5 d-flex">
-        <img src="/static/images/te2.jpg" className="mr-3 avatar-image" alt="image" />
+      <div className={`py-5 d-flex ${classes.media}`}>
+        <img
+          src="/static/images/te2.jpg"
+          className={`mr-3 ${classes.avatarImage}`}
+          alt="image"
+        />
         <div className="media-body mt-4">
           <h5 className="mt-0 editContent">{comment.name}</h5>
           <p className="mt-2 editContent">{comment.text}</p>
@@ -30,23 +36,43 @@ export const NovelDetail: React.FC<{
   }, []);
 
   const novel_shots = novel?.novelshots_set.map((image) => {
-    return <img src={image.image} className="img-novel-shots" />;
+    return <img src={image.image} className={classes.shots} />;
   });
 
   const developers = novel?.developers.map((dev) => dev.name).join(", ");
   const genres = novel?.genres.map((genre) => genre.name).join(", ");
-  if (novel != null) {
+  let options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  let date = new Date(Date.parse(novel?.release_date));
+  let commentsBlock = (userName: string) => {
+    if (userName !== null)
+      return <FormComment form={form} novelId={novel.id} />;
+    else
+      return (
+        <div>
+          <p className={classes.alertText}>
+            <Link to="/login">Войдите</Link> или{" "}
+            <Link to="/registration">зарегистрирутейсь</Link>, чтобы оставить
+            комментарий.
+          </p>
+        </div>
+      );
+  };
+  if (novel) {
     return (
       <div>
         <Breadcrumb point="Каталог новелл" />
         <div className="row padding">
           <Sidebar topNovels={topNovels} />
-          <div className="left-ads-display col-lg-8">
+          <div className="padding col-lg-8">
             <div className="row">
-              <div className="desc1-left col-md-4">
+              <div className={`col-md-4 ${classes.leftSide}`}>
                 <img src={novel?.poster} className="img-fluid" alt="" />
               </div>
-              <div className="desc1-right col-md-8 pl-lg-4">
+              <div className={`col-md-8 pl-lg-4 ${classes.rightSide}`}>
                 <h3>{novel.title}</h3>
                 <h5 className="editContent"></h5>
                 <ul>
@@ -68,7 +94,7 @@ export const NovelDetail: React.FC<{
                   </li>
                   <li className={classes.unstyled_list}>
                     <span>
-                      <b>Дата выхода:</b> {novel.release_date}
+                      <b>Дата выхода:</b> {date.toLocaleString("ru", options)}
                     </span>
                   </li>
                 </ul>
@@ -80,10 +106,7 @@ export const NovelDetail: React.FC<{
                 О визуальной новелле {novel.title}
               </h3>
               <p>{novel_shots}</p>
-              <p className="editContent">
-                {" "}
-                {novel.description}
-              </p>
+              <p className="editContent"> {novel.description}</p>
               <p className="mt-3 italic-blue editContent">
                 {" "}
                 <iframe
@@ -100,12 +123,10 @@ export const NovelDetail: React.FC<{
                 <div className="contact-single">
                   <h3 className="editContent">
                     {" "}
-                    <span className="sub-tittle editContent">
-                      {comments.length}
-                    </span>
+                    <span className={classes.subTitle}>{comments.length}</span>
                     Оставить отзыв
                   </h3>
-                  <FormComment form={form} novelId={novel.id} />
+                  {commentsBlock(username)}
                 </div>
               </div>
             </div>

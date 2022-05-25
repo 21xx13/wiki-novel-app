@@ -27,7 +27,9 @@ export const Sidebar: React.FC<{
                 <h3 className={classes.headers} >Поиск материалов</h3>
                 <form action="#" method="post" className="d-flex editContent" >
                     <input type="search" placeholder="Введите название..." name="search" className="form-control" />
-                    <button className="btn1" ><span className="fa fa-search" aria-hidden="true" ></span></button>
+                    <div className="w3layouts-newsletter text-center">
+                        <button className="btn1" ><span className="fa fa-search" aria-hidden="true" ></span></button>
+                        </div>
                 </form>
             </div>
             <div className="left-side my-4">

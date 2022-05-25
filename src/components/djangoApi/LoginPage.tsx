@@ -5,6 +5,7 @@ import { User } from "../../models/User";
 import { useLoginUserMutation } from "./authHookApi";
 import CSRFToken from "./csrfToken";
 import { Link, useNavigate } from "react-router-dom";
+import classes from './LoginPage.module.css';
 
 export const LoginPage: React.FC<{
   form: UseFormReturn<User, any>;
@@ -62,7 +63,7 @@ export const LoginPage: React.FC<{
     ) : ( <div></div> );
 
     return (
-      <div className="login-wrap text-center">
+      <div className={classes.loginWrap}>
         <h3>{isLogin ? "Вход" : "Регистрация"}</h3>
         <br></br>
         <Form onSubmit={handleSubmit(onSubmit)}>

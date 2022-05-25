@@ -2,7 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Theme } from "../../models/Theme";
 import { Breadcrumb } from "../Breadcrumb";
-import { MenuCourse } from "./MenuCourse";
+import { ThemeList } from "./ThemeList";
+import classes from './Theme.module.css';
 
 export const ThemeDetail: React.FC<{
   theme: Theme;
@@ -12,7 +13,7 @@ export const ThemeDetail: React.FC<{
   if (theme != null) {
     const slides = theme.courseslide_set.map((slide) => {
       return (
-        <li className="theme-slide showing">
+        <li className="theme-slide">
           <div
             className="Container"
             dangerouslySetInnerHTML={{ __html: slide.html_layout }}
@@ -24,22 +25,22 @@ export const ThemeDetail: React.FC<{
       <div>
         <Breadcrumb point="Гайд по Renpy" />
         <div className="row padding">
-          <div className="side-bar col-lg-3 course-content-list">
-            <div className="sidebar-section">
-              <div className="sidebar-item sticky-top">
-                <div className="sidebar-content">
-                  <MenuCourse themes={themes} />
+          <div className="col-lg-3">
+            <div className={classes.sidebarSection}>
+              <div className="sticky-top">
+                <div className={classes.sidebarContent}>
+                  <ThemeList themes={themes} />
                 </div>
               </div>
             </div>
           </div>
-          <div className="left-ads-display col-lg-8">
+          <div className="padding col-lg-8">
             <div className="content-section">
-              <ul id="theme-slides">{slides}</ul>
+              <ul style={{listStyleType:"none"}}>{slides}</ul>
             </div>
           </div>
           <div className="col-lg-1 col-btn">
-            <div className="btn next-btn next-slide" onClick={()=> {
+            <div className={`btn ${classes.next}`} onClick={()=> {
               if (theme.id !== themes.length - 1){
                 navigate(`/course/${theme.id + 1}`);
               }

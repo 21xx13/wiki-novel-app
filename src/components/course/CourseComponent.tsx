@@ -2,7 +2,7 @@ import React from "react";
 import { Sidebar } from "../SidebarComponent";
 import classes from "./../Main.module.css";
 import { Theme } from "../../models/Theme";
-import { MenuCourse } from "./MenuCourse";
+import { ThemeList } from "./ThemeList";
 import { Breadcrumb } from "../Breadcrumb";
 import { Link } from "react-router-dom";
 import { Novel } from "../../models/Novel";
@@ -28,7 +28,7 @@ export const Course: React.FC<{
             </p>
             <br />
             <hr />
-            <MenuCourse themes={themes} />
+            <ThemeList themes={themes} />
             <br />
             <div className="w3layouts-newsletter">
               <Link
